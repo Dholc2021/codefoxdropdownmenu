@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+        <script src="script.js" async defer></script>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <a href="#" class="nav-branding"><img src="logo-small.png" alt=""></a>
+
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Properties</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+
+                    <div class="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+
+            </nav>
+        </header>
+
+        <!--==================== MAIN ====================-->
+        <main class="main">
+        
+        
+        
+            <!--==================== HOME ====================-->
+        
+            <section class="home section" id="home">
+        
+                <div class="home__container container grid">
+                    <div class="home__data">
+        
+        
+                        <h1 class="home__title">
+                            <span>Welcome to <br> Landmark Realty</span>
+                            </hl>
+                            <p class="home__description">
+                                Search the full listing of homes available now!
+                            </p>
+                            <form action="" class="home__search">
+                                <i class='bx bxs—map'></i>
+                                <input type="search" placeholder="Search by location..." class="home__search-input">
+                                <button class="button">Search</button>
+                            </form>
+                            <div class="home__value">
+                                <!--Container For All Cards-->
+                                <div>
+                                    <!-- Container for 1st individual Card-->
+        
+                                    <span class="home__value-description">
+                                        Premium <br> Properties
+                                    </span>
+                                </div>
+                                <!--End Container for 1st indiv. card -->
+                                <div>
+                                    <!-- Container for 2nd individual Card-->
+        
+                                    <span class="home__value-description">
+                                        Happy <br> Customers
+                                    </span>
+                                </div>
+                                <!--End Container for 2nd indiv. card -->
+                                <div>
+                                    <!-- Container for 3rd individual Card-->
+        
+                                    <span class="home__value-description">
+                                        Award <br> Winning
+                                    </span>
+                                </div>
+                                <!--End Container for 3rd indiv. card -->
+                            </div>
+                            <!--End COntainer for all Cards -->
+                    </div><!-- End of home data-->
+        
+                </div>
+                </div><!-- End of home__img-->
+        
+                </div><!-- End of home__images-->
+        
+        
+                </div>
+                <!--End home container-->
+        
+        
+        
+            </section> <!-- End of home section-->
+        
+        
+        
+        
+            <!--==================== POPULAR ====================-->
+            <section id="slider" class="slider">
+                <div class="slider__title">
+                    <h1>Popular Properties</h1>
+                </div>
+                <div class="img-slider">
+                    <div class="slide active">
+                        <img src="img/carousel1-900x400.jpg" alt="">
+                        <div class="info">
+                            <h2>Example Property 1</h2>
+                            <p>12345 Fake St.
+                                Grenada, MS 38901</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="img/carousel2-900x400.jpg" alt="">
+                        <div class="info">
+                            <h2>Example Property 2</h2>
+                            <p>12345 Fake St.
+                                Grenada, MS 38901</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="img/carousel3-900x400.jpg" alt="">
+                        <div class="info">
+                            <h2>Example Property 3</h2>
+                            <p>12345 Fake St.
+                                Grenada, MS 38901</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="img/post-2-900x400.jpg" alt="">
+                        <div class="info">
+                            <h2>Example Property 4</h2>
+                            <p>12345 Fake St.
+                                Grenada, MS 38901</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="img/post-4-900x400.jpg" alt="">
+                        <div class="info">
+                            <h2>Example Property 5
+                            </h2>
+                            <p>
+                                12345 Fake St.
+                                Grenada, MS 38901
+                            </p>
+                        </div>
+                    </div>
+        
+                    <div class="navigation">
+                        <div class="btn active"></div>
+                        <div class="btn"></div>
+                        <div class="btn"></div>
+                        <div class="btn"></div>
+                        <div class="btn"></div>
+                    </div>
+                </div>
+            </section>
+        
+            <script>
+                var slides = document.querySelectorAll('.slide');
+                var btns = document.querySelectorAll('.btn');
+                let currentSlide = 1;
+
+                // Javascript for image slider manual navigation
+                var manualNav = function (manual) {
+                    slides.forEach((slide) => {
+                        slide.classList.remove('active');
+
+                        btns.forEach((btn) => {
+                            btn.classList.remove('active');
+                        });
+                    });
+
+                    slides[manual].classList.add('active');
+                    btns[manual].classList.add('active');
+                }
+
+                btns.forEach((btn, i) => {
+                    btn.addEventListener("click", () => {
+                        manualNav(i);
+                        currentSlide = i;
+                    });
+                });
+
+                // Javascript for image slider autoplay navigation
+                var repeat = function (activeClass) {
+                    let active = document.getElementsByClassName('active');
+                    let i = 1;
+
+                    var repeater = () => {
+                        setTimeout(function () {
+                            [...active].forEach((activeSlide) => {
+                                activeSlide.classList.remove('active');
+                            });
+
+                            slides[i].classList.add('active');
+                            btns[i].classList.add('active');
+                            i++;
+
+                            if (slides.length == i) {
+                                i = 0;
+                            }
+                            if (i >= slides.length) {
+                                return;
+                            }
+                            repeater();
+                        }, 10000);
+                    }
+                    repeater();
+                }
+                repeat();
+            </script>
+        
+        
+        
+        
+            <!--==================== VALUE ====================-->
+            <section class="value value__section" id="value">
+                <div class="value__container container grid">
+                    <div class="value__images">
+        
+        
+                        <div class="value__img">
+                            <img class="keyhole" src="img/home.jpg" alt="">
+                        </div>
+                    </div>
+        
+                    <div class="value__content">
+                        <div class="value__data">
+        
+                            <span class="section__subtitle">Our Value</span>
+                            <h2 class="section__title">
+                                What We Offer To You <span>.</span>
+                            </h2>
+                            <p class="value__description">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                Officiis consequuntur iusto saepe, vitae voluptatem tenetur
+                                voluptatum illo veritatis nobis assumenda at incidunt facere
+                                hic fugit repudiandae eveniet beatae odit deleniti sint placeat modi.
+                            </p>
+                        </div>
+        
+                        <!----------------------------- Begin Value Accorian ------------------------------------------>
+        
+        
+        
+        
+        
+                        <h2>Accordion</h2>
+        
+                        <button class="accordion">Best Rates on the Market.<em>(click to see more)</em></button>
+                        <div class="panel">
+                            <p class="accordion-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore
+                                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                                ex ea commodo
+                                consequat.</p>
+                        </div>
+        
+                        <button class="accordion">No Unexpected Charges.<em>(click to see more)</em></button>
+                        <div class="panel">
+                            <p class="accordion-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore
+                                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                                ex ea commodo
+                                consequat.</p>
+                        </div>
+        
+                        <button class="accordion">We Keep Your Data Private!<em>(click to see more)</em></button>
+                        <div class="panel">
+                            <p class="accordion-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore
+                                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                                ex ea commodo
+                                consequat.</p>
+                        </div>
+        
+        
+        
+                        <script> var acc = document.getElementsByClassName("accordion");
+                            var i;
+
+                            for (i = 0; i < acc.length; i++) {
+                                acc[i].addEventListener("click", function () {
+                                    this.classList.toggle("active");
+                                    var panel = this.nextElementSibling;
+                                    if (panel.style.display === "block") {
+                                        panel.style.display = "none";
+                                    } else {
+                                        panel.style.display = "block";
+                                    }
+                                });
+                            }</script>
+        
+        
+        
+        
+        
+        
+        
+                    </div>
+        
+                </div>
+        
+            </section>
+        
+            <!--==================== CONTACT ====================-->
+            <section class="contact section" id="contact">
+        
+            </section>
+        
+            <!--==================== SUBSCRIBE ====================-->
+            <section class="subscribe section">
+        
+            </section>
+        </main>
+        
+        <!--==================== FOOTER ====================-->
+        <footer class="footer section">
+        
+        </footer>
+        
+        
+        <!--========== SCROLL UP ==========-->
+        
+        
+        <!--=============== SCROLLREVEAL ===============-->
+        <script src="scrollreveal.min.js"></script>
+        
+        <!--=============== SWIPER JS ===============-->
+        <script src="swiper-bundle.min.js"></script>
+        
+        <!-- ===== IONICONS ===== -->
+        <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+        
+        
+        
+        <script src="main.js" defer></script>
+
+    </body>
+</html>
